@@ -10,13 +10,18 @@ let numeroJugador = undefined
 
 while (!numeroJugador ||  numeroJugador !== numeroSecreto) {
 
+    const response = prompt(`Hola Sofita: adivina el número secreto entre ${limiteInferior} y ${limiteSuperior}:`)
+    if (response === null) {
+        alert("Fin del juego")
+        break
+    }
     numeroJugador = parseInt(
-        prompt(`Hola Sofita: adivina el número secreto entre ${limiteInferior} y ${limiteSuperior}:`)
+        response
     );
     
     console.log(`Este es el número con el que juegas: ${numeroJugador}`);
 
-    if(numeroJugador === numeroSecreto) {
+    if (numeroJugador === numeroSecreto) {
         alert("¡Felicidades! ¡Adivinaste el número secreto!");
     } else if (numeroJugador > limiteSuperior || numeroJugador < limiteInferior) {
         alert(`Ingresa un número entre ${limiteInferior} y ${limiteSuperior}`);
