@@ -1,0 +1,11 @@
+.plans-container--slider {
+    justify-content: center;
+    gap: 10%;
+}
+
+.product-cards--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+}
