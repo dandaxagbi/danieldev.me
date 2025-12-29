@@ -1,0 +1,743 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bizlytics",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Bizlytics es un sistema de automatización y ventas basado en datos que permite a negocios vender 24/7 a través de WhatsApp, e-commerce y canales digitales, con reportes claros y decisiones inteligentes.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "59",
+      "availability": "https://schema.org/InStock"
+    },
+    "faqPage": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es Bizlytics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bizlytics es un sistema de automatización y ventas basado en datos que ayuda a los negocios a vender 24/7 sin depender de respuestas manuales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Bizlytics funciona con WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Bizlytics automatiza conversaciones en WhatsApp con lógica de negocio, capturando leads y midiendo conversiones."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  
+<div class="bg-gray-900">
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:justify-start">
+        <a href="http://wa.me/+15716649245" class="-m-1.5 p-1.5">
+          <span class="sr-only">Bizlytics</span>
+          <img src="/src/assets/img/Bizlytics.svg" alt="" class="h-8 w-auto" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-10 lg:justify-center">
+        <a href="#problema" class="text-sm/6 font-semibold text-white">Problema</a>
+        <a href="#solucion" class="text-sm/6 font-semibold text-white">La solución Bizlytics</a>
+        <a href="#planes" class="text-sm/6 font-semibold text-white">Planes</a>
+        <a href="#como-funciona" class="text-sm/6 font-semibold text-white">Cómo funciona</a>
+        <a href="#diferencia" class="text-sm/6 font-semibold text-white">La diferencia</a>
+        <a href="#contacto" class="text-sm/6 font-semibold text-white">Contacto</a>
+      </div>
+      <div class="hidden lg:flex lg:justify-end">
+        <a href="/src/404.html" class="text-sm/6 font-semibold text-white"> <span aria-hidden="true"></a>
+      </div> 
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Bizlytics</span>
+                <img src="/src/assets/img/Bizlytics.svg" alt="" class="h-8 w-auto" />
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-white/10">
+                <div class="space-y-2 py-6">
+                  <a href="#problema" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Problema</a>
+                  <a href="#solucion" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">La solución Bizlytics</a>
+                  <a href="#planes" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Planes</a>
+                  <a href="#como-funciona" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Cómo funciona</a>
+                  <a href="#diferencia" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">La diferencia</a>
+                  <a href="#contacto" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Contacto</a>
+                </div>
+                <div class="py-6">
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5">Acceder</a>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+  <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+      <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>P
+    </div>
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+          Blog: Responder mensajes no es vender: por qué tu WhatsApp no genera ventas | <a href="#" class="font-semibold text-indigo-400"><span aria-hidden="true" class="absolute inset-0"></span>  Leer  <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="text-center">
+        <h1 class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Haz que tu negocio venda mientras duermes</h1>
+        <p class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Si tu negocio depende de responder mensajes manualmente, no tienes un sistema. Tienes una carga operativa que limita tu crecimiento.
+          <br><br>Bizlytics transforma WhatsApp, e-commerce y contenido en un motor de ventas automatizado, con reportes claros y decisiones basadas en datos.</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="http://wa.me/+15716649245" class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Quiero vender 24/7</a>
+          <a href="#problema" class="text-sm/6 font-semibold text-white">Ver cómo funciona <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+      <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+    </div>
+  </div>
+</div>
+
+<div id="problema" class="overflow-hidden bg-gray-900 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="lg:pt-4 lg:pr-8">
+        <div class="lg:max-w-lg">
+          <h2 class="text-base/7 font-semibold text-indigo-400">El problema</h2>
+          <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">¿Tu negocio todavía depende de responder WhatsApp manualmente?</p>
+          <p class="mt-6 text-lg/8 text-gray-300">WhatsApp se convirtió en el principal canal de ventas para muchos negocios.
+            <br>
+            El problema no es usarlo.
+            <br>
+            El problema es depender exclusivamente de respuestas manuales.
+            <br>
+            Cuando cada venta depende de que alguien esté disponible, atento y responda a tiempo, el negocio queda atado a personas, horarios y esfuerzo constante. Eso no es vender. Es sostener una operación frágil.
+            <br><br>
+            Vender de verdad implica tener un sistema que:
+          </p>
+          <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-white">
+                <span aria-hidden="true" class="absolute top-1 left-1 text-indigo-400">&bull;</span>
+                Responde al instante, incluso cuando nadie está conectado
+              </dt>
+            </div>
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-white">
+                <span aria-hidden="true" class="absolute top-1 left-1 text-indigo-400">&bull;</span>
+                Filtra consultas irrelevantes y prioriza oportunidades reales
+              </dt>
+            </div>
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-white">
+                <span aria-hidden="true" class="absolute top-1 left-1 text-indigo-400">&bull;</span>
+                Presenta la oferta correcta en el momento adecuado
+              </dt>
+            </div>
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-white">
+                <span aria-hidden="true" class="absolute top-1 left-1 text-indigo-400">&bull;</span>
+                Registra cada interacción y la convierte en datos
+              </dt>
+            </div>
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-white">
+                <span aria-hidden="true" class="absolute top-1 left-1 text-indigo-400">&bull;</span>
+                Aprende qué mensajes convierten y cuáles no
+              </dt>
+            </div>
+          </dl>
+          <p class="mt-6 text-lg/8 text-gray-300">Sin ese sistema, las ventas son impredecibles.
+            <br>
+            Con un sistema, las ventas se vuelven escalables.
+            <br>
+            Bizlytics elimina la improvisación y transforma conversaciones en decisiones medibles que impulsan el crecimiento.
+          </p>
+        </div>
+      </div>
+      <img width="2432" height="1442" src="/src/assets/img/m1web.jpg" alt="Product screenshot" class="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0" />
+    </div>
+  </div>
+</div>
+
+<div id="solucion" class="bg-gray-900 py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <h2 class="text-center text-base/7 font-semibold text-indigo-400">La solución Bizlytics</h2>
+    <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Bizlytics integra lo que hoy tienes disperso en un solo flujo de ventas inteligente</p>
+    <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+      <div class="relative lg:row-span-2">
+        <div class="absolute inset-px rounded-lg bg-gray-800 lg:rounded-l-4xl"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+            <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Contenido que convierte</p>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">Mensajes diseñados para vender, no para “estar presente”.</p>
+          </div>
+          <div class="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+            <div class="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 outline outline-white/20">
+              <img src="/src/assets/img/gifweb.gif" alt="" class="size-full object-cover object-top" />
+            </div>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 lg:rounded-l-4xl"></div>
+      </div>
+      <div class="relative max-lg:row-start-1">
+        <div class="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-t-4xl"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+            <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Datos accionables</p>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">No métricas decorativas. Reportes claros para decidir qué escalar y qué cortar. <a href="/src/assets/img/BLTCSReport.png" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-400">
+              <span aria-hidden="true" class="absolute inset-0"></span>
+              Ver un modelo de reporte <span aria-hidden="true">&rarr;</span>
+            </a></p>
+          </div>
+          <div class="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
+            <img src="/src/assets/img/BI-Bizlytics2.png" alt="" class="w-full max-lg:max-w-xs" />
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-t-4xl"></div>
+      </div>
+      <div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+        <div class="absolute inset-px rounded-lg bg-gray-800"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+          <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+            <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Automatización inteligente</p>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">
+              WhatsApp y e-commerce respondiendo 24/7 con lógica de negocio, no respuestas genéricas. <a href="/src/store.html" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-400"><span aria-hidden="true" class="absolute inset-0"></span>  Ver e-commerce <span aria-hidden="true">&rarr;</span></a>
+            </p>
+          </div>
+          <div class="flex flex-1 justify-center max-lg:py-6 lg:pb-2">
+            <img src="/src/assets/img/bi-bento2.jpg" alt="" class="h-[min(152px,40cqw)] object-cover" />
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15"></div>
+      </div>
+      <div class="relative lg:row-span-2">
+        <div class="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+            <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Control total</p>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">Sabes qué funciona, por qué funciona y cómo optimizarlo. <a href="#" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-400">
+              <span aria-hidden="true" class="absolute inset-0"></span>
+              Chatbot GPT-based dsponible Febrero 2026.
+            </a></p>
+          </div>
+          <div class="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+            <div class="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 outline outline-white/20">
+              <img src="/src/assets/img/Chatbot.gif" alt="" class="size-full object-cover object-top" />
+            </div>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="planes" class="relative isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+  <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
+    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-20"></div>
+  </div>
+  <div class="mx-auto max-w-4xl text-center">
+    <h2 class="text-base/7 font-semibold text-indigo-400">Planes</h2>
+    <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">Planes simples y accesibles para crecer</p>
+  </div>
+  <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">No vendemos promesas. Vendemos sistemas que se pagan solos cuando funcionan.</p>
+  <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
+    <div class="rounded-3xl rounded-t-3xl bg-white/2.5 p-8 ring-1 ring-white/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl">
+      <h3 id="tier-hobby" class="text-base/7 font-semibold text-indigo-400">One-time Consulting</h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="text-5xl font-semibold tracking-tight text-white"></span>
+        <span class="text-base text-gray-400">Servicio Personalizado · Pago único</span>
+      </p>
+      <p class="mt-6 text-base/7 text-gray-300">Para personas, equipos u organizaciones que necesitan ordenar, definir o corregir su estrategia digital, sin contratar un plan mensual.</p>
+      <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Kit digital de marca (propósito, narrativa, tono y propuesta de valor)
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Sitios web y one-pagers enfocados en conversión
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          SEO / GEO, CRO
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Capacitación y acompañamiento estratégico en visibilización digital
+        </li>
+      </ul>
+      <p class="mt-6 text-base/7 text-gray-300">Ideal si necesitas claridad estratégica, orden y dirección antes de escalar.</p>
+      <a href="http://wa.me/+15716649245" aria-describedby="tier-hobby" class="mt-8 block rounded-md bg-white/10 px-3.5 py-2.5 text-center text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:mt-10">Solicitar consultoría</a>
+    </div>
+    <div class="rounded-3xl rounded-t-3xl bg-white/2.5 p-8 ring-1 ring-white/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl">
+      <h3 id="tier-hobby" class="text-base/7 font-semibold text-indigo-400">Starter</h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="text-5xl font-semibold tracking-tight text-white">$59</span>
+        <span class="text-base text-gray-400">/mes ($602/año -15%)</span>
+      </p>
+      <p class="mt-6 text-base/7 text-gray-300">Para negocios que ya venden online y necesitan estructura, datos y control.</p>
+      <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          E-commerce
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          SEO / GEO aplicado al e-commerce
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Arquitectura de contenidos aplicada al e-commerce
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Playbooks de ventas básicos
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Capacitación comercial básica
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Reportes mensuales: Tráfico, Ventas, CAC & ROI
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Implementación ágil (2–4 semanas)
+        </li>
+      </ul>
+      <p class="mt-6 text-base/7 text-gray-300">Ideal si ya tienes operación digital, pero tomas decisiones con poca visibilidad.</p>
+      <a href="http://wa.me/+15716649245" aria-describedby="tier-hobby" class="mt-8 block rounded-md bg-white/10 px-3.5 py-2.5 text-center text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:mt-10">Empezar con Starter</a>
+    </div>
+    <div class="relative rounded-3xl bg-gray-800 p-8 ring-1 ring-white/10 sm:p-10">
+      <h3 id="tier-enterprise" class="text-base/7 font-semibold text-indigo-400">Growth</h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="text-5xl font-semibold tracking-tight text-white">$149</span>
+        <span class="text-base text-gray-400">/mes ($1,520/año -15%)</span>
+      </p>
+      <p class="mt-6 text-base/7 text-gray-300">Para negocios que quieren vender con automatización, datos y mejora continua, sin depender del esfuerzo manual.</p>
+      <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Todo lo de Starter
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Chatbot GPT-based de WhatsApp entrenado con productos, FAQs, tono de marca y objetivos comerciales
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Playbooks de ventas avanzados
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Evaluaciones mensuales con Bizlytics
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Capacitación comercial avanzada
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Reportes mensuales: Tráfico, Ventas, CAC & ROI
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Implementación ágil (2–4 semanas)
+        </li>
+      </ul>
+      <p class="mt-6 text-base/7 text-gray-300">Quieres un sistema de ventas que opere 24/7 y mejore con datos reales.</p>
+      <a href="http://wa.me/+15716649245" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Activar Growth (disponible Febrero 2026)</a>
+    </div>
+  </div>
+</div>
+
+<div id="como-funciona" class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg aria-hidden="true" class="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-800">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-800/50">
+        <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+      </svg>
+      <rect width="100%" height="100%" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" stroke-width="0" />
+    </svg>
+  </div>
+  <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="lg:max-w-lg">
+          <p class="text-base/7 font-semibold text-indigo-400">Cómo funciona</p>
+          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Vende más rápido</h1>
+          <p class="mt-6 text-xl/8 text-gray-300">Decide mejor.</p>
+        </div>
+      </div>
+    </div>
+    <div class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+      <img src="/src/assets/img/e-commblztcs.jpg" alt="" class="w-3xl max-w-none rounded-xl bg-gray-800 shadow-xl ring-1 ring-white/10 sm:w-228" />
+    </div>
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="max-w-xl text-base/7 text-gray-400 lg:max-w-lg">
+          <p>Bizlytics no reemplaza a tu equipo.
+
+            Lo libera de tareas repetitivas y lo enfoca en decisiones estratégicas.
+            
+            Resultados típicos:
+          </p>
+          <ul role="list" class="mt-8 space-y-8 text-gray-400">
+            <li class="flex gap-x-3">
+
+              <span><strong class="font-semibold text-white">- Respuesta inmediata 24/7</strong></span>
+            </li>
+            <li class="flex gap-x-3">
+              <span><strong class="font-semibold text-white">- Menos leads perdidos</strong></span>
+            </li>
+            <li class="flex gap-x-3">
+              <span><strong class="font-semibold text-white">- Más conversiones con el mismo tráfico</strong></span>
+            </li>
+            <li class="flex gap-x-3">
+              <span><strong class="font-semibold text-white">- Claridad total sobre el rendimiento</strong></span>
+            </li>
+          </ul>
+          <p class="mt-6">Menos intuición.
+          <br>
+            Más decisiones con datos.</p>
+          <p class="mt-6">Invertir en anuncios sin sistema es solo gastar presupuesto.
+            Por eso gestionamos campañas CPC multiplataforma conectadas a ventas, datos y optimización real
+            (Google Ads, Meta Ads, Bing Ads, Outbrain, Taboola, ActiveCampaign, SendGrid, entre otros).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div id="diferencia" class="bg-gray-900 py-24 sm:py-32">
+  <div class="text-center">
+      <p class="text-base/7 font-semibold text-indigo-400">La diferencia</p>
+      <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">¿Por qué Bizlytics es diferente?</h1>
+  </div>
+  <div class="mt-10 mx-auto max-w-7xl px-6 lg:px-8">
+    <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base/7 text-gray-400">Implementación rápida. Sin procesos eternos ni setups complejos.</dt>
+        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">Ágil</dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base/7 text-gray-400">Tecnología avanzada sin costos de agencia.</dt>
+        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">Accesible</dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base/7 text-gray-400">Automatización, datos y narrativa de venta en un solo sistema.</dt>
+        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">Todo en uno</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div id="contacto" class="bg-gray-900">
+  <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+    <div class="relative isolate overflow-hidden bg-gray-800 px-6 pt-16 after:pointer-events-none after:absolute after:inset-0 after:inset-ring after:inset-ring-white/10 sm:rounded-3xl sm:px-16 after:sm:rounded-3xl md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+      <svg viewBox="0 0 1024 1024" aria-hidden="true" class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0">
+        <circle r="512" cx="512" cy="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
+        <defs>
+          <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+            <stop stop-color="#7775D6" />
+            <stop offset="1" stop-color="#E935C1" />
+          </radialGradient>
+        </defs>
+      </svg>
+      <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+        <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Tu negocio puede empezar a vender 24/7 desde hoy</h2>
+        <p class="mt-6 text-lg/8 text-pretty text-gray-300">No necesitas más esfuerzo.
+        <br>
+        Quiero activar mi sistema de ventas</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+          <a href="http://wa.me/+15716649245" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Quiero activar mi sistema de ventas </a>
+        </div>
+      </div>
+      <div class="relative mt-16 h-80 lg:mt-8">
+        <img width="1824" height="1080" src="/src/assets/img/e-commblztcs.jpg" alt="App screenshot" class="absolute top-0 left-0 w-228 max-w-none rounded-md bg-white/5 ring-1 ring-white/10" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="faq" class="bg-gray-900 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="lg:pr-8">
+        <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Preguntas frecuentes</h2>
+        <p class="mt-6 text-lg/8 text-gray-300">Si algo no quedó claro, <a href="http://wa.me/+15716649245" class="font-semibold text-indigo-400 hover:text-indigo-300">conversemos</a>.</p>
+      </div>
+      <div class="lg:pr-8">
+        <dl class="space-y-8">
+          <div>
+            <dt class="text-base/7 font-semibold text-white">¿Qué es Bizlytics y para qué tipo de negocios sirve?</dt>
+            <dd class="mt-2 text-base/7 text-gray-300">Bizlytics es un sistema de automatización y ventas basado en datos, diseñado para negocios que venden por WhatsApp, e-commerce o canales digitales y necesitan escalar sin depender de respuestas manuales.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-white">¿Bizlytics reemplaza a mi equipo de ventas?</dt>
+            <dd class="mt-2 text-base/7 text-gray-300">No. Bizlytics automatiza tareas repetitivas, filtra oportunidades y entrega datos claros para que tu equipo venda mejor y tome decisiones más inteligentes.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-white">¿Necesito conocimientos técnicos para usar Bizlytics?</dt>
+            <dd class="mt-2 text-base/7 text-gray-300">No. Bizlytics está diseñado para dueños de negocio y equipos comerciales. La tecnología opera en segundo plano; tú ves decisiones claras y resultados.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-white">¿En cuánto tiempo puedo ver resultados?</dt>
+            <dd class="mt-2 text-base/7 text-gray-300">La mayoría de los negocios comienza a ver mejoras en tiempos de respuesta, calidad de leads y conversiones en las primeras semanas, una vez activado el sistema.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bg-gray-900 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Blog</h2>
+      <p class="mt-2 text-lg/8 text-gray-300">Aprende a vender mejor con sistemas, datos e IA aplicada al negocio.
+        <br>
+        No publicamos tendencias ni recetas genéricas.
+        Compartimos ideas, marcos mentales y casos reales para dejar de improvisar y empezar a tomar decisiones que escalan ventas.
+        Marketing digital, automatización e inteligencia artificial explicados con lógica de negocio.</p>
+    </div>
+    <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <article class="flex max-w-xl flex-col items-start justify-between">
+        <div class="flex items-center gap-x-4 text-xs">
+          <time datetime="2020-03-16" class="text-gray-400">Dec 15, 2025</time>
+          <a href="#" class="relative z-10 rounded-full bg-gray-800/60 px-3 py-1.5 font-medium text-gray-300 hover:bg-gray-800"> Digital Marketing</a>
+        </div>
+        <div class="group relative grow">
+          <h3 class="mt-3 text-lg/6 font-semibold text-white group-hover:text-gray-300">
+            <a href="#">
+              <span class="absolute inset-0"></span>
+              Publicar más no va a salvar tu negocio: por qué hacer marketing no es crecer
+            </a>
+          </h3>
+          <p class="mt-5 line-clamp-3 text-sm/6 text-gray-400">Publicas en redes.
+
+            A veces más, a veces menos.
+            
+            Cambias diseños, copys, formatos.
+            
+            Y aun así, las ventas siguen igual.
+            
+            El problema no es que no estés haciendo marketing.
+            
+            El problema es creer que hacer marketing es crecer.</p>
+        </div>
+        <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+          <img src="/src/assets/img/Daniel-Aguilar-Bishop.jpeg" alt="" class="w-10 h-10 rounded-full bg-gray-800" />
+          <div class="text-sm/6">
+            <p class="font-semibold text-white">
+              <a href="#">
+                <span class="absolute inset-0"></span>
+                Daniel Aguilar Bishop
+              </a>
+            </p>
+            <p class="text-gray-400">CEO / Founder</p>
+          </div>
+        </div>
+      </article>
+      <article class="flex max-w-xl flex-col items-start justify-between">
+        <div class="flex items-center gap-x-4 text-xs">
+          <time datetime="2020-03-10" class="text-gray-400">Dec 15, 2025</time>
+          <a href="#" class="relative z-10 rounded-full bg-gray-800/60 px-3 py-1.5 font-medium text-gray-300 hover:bg-gray-800">Digital Marketing</a>
+        </div>
+        <div class="group relative grow">
+          <h3 class="mt-3 text-lg/6 font-semibold text-white group-hover:text-gray-300">
+            <a href="#">
+              <span class="absolute inset-0"></span>
+              Marketing basado en datos explicado simple: qué medir cuando no tienes casi nada
+            </a>
+          </h3>
+          <p class="mt-5 line-clamp-3 text-sm/6 text-gray-400">Escuchas “marketing basado en datos” y suena complejo.
+
+            Dashboards, métricas, herramientas, números.
+            
+            Pero la realidad es más simple:
+            
+            hoy ya tomas decisiones con datos… solo que malos datos.</p>
+        </div>
+        <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+          <img src="/src/assets/img/Daniel-Aguilar-Bishop.jpeg" alt="" class="w-10 h-10 rounded-full bg-gray-800" />
+          <div class="text-sm/6">
+            <p class="font-semibold text-white">
+              <a href="#">
+                <span class="absolute inset-0"></span>
+                Daniel Aguilar Bishop
+              </a>
+            </p>
+            <p class="text-gray-400">CEO / Founder</p>
+          </div>
+        </div>
+      </article>
+      <article class="flex max-w-xl flex-col items-start justify-between">
+        <div class="flex items-center gap-x-4 text-xs">
+          <time datetime="2020-02-12" class="text-gray-400">Dec 15, 2025</time>
+          <a href="#" class="relative z-10 rounded-full bg-gray-800/60 px-3 py-1.5 font-medium text-gray-300 hover:bg-gray-800">Marketing Digital</a>
+        </div>
+        <div class="group relative grow">
+          <h3 class="mt-3 text-lg/6 font-semibold text-white group-hover:text-gray-300">
+            <a href="#">
+              <span class="absolute inset-0"></span>
+              Tener visitas no es tener ventas: dónde se pierde el dinero en tu web o tienda online
+            </a>
+          </h3>
+          <p class="mt-5 line-clamp-3 text-sm/6 text-gray-400">Tu web recibe visitas.
+
+            Tu tienda tiene tráfico.
+            
+            Pero las ventas no llegan.
+            
+            El problema no es atraer gente.
+            
+            El problema es perderla en el camino.</p>
+        </div>
+        <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+          <img src="/src/assets/img/Daniel-Aguilar-Bishop.jpeg" alt="" class="w-10 h-10 rounded-full bg-gray-800" />
+          <div class="text-sm/6">
+            <p class="font-semibold text-white">
+              <a href="#">
+                <span class="absolute inset-0"></span>
+                Daniel Aguilar Bishop
+              </a>
+            </p>
+            <p class="text-gray-400">CEO / Founder</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+
+<div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+      <div class="max-w-xl lg:max-w-lg">
+        <h2 class="text-4xl font-semibold tracking-tight text-white">Suscríbete al newsletter de Bizlytics</h2>
+        <p class="mt-4 text-lg text-gray-300">Ideas claras para vender mejor, automatizar con criterio y tomar decisiones basadas en datos.
+
+          Nada de ruido. Solo contenido que ayuda a que tu negocio crezca de forma sostenible.</p>
+        <div class="mt-6 flex max-w-md gap-x-4">
+          <label for="email-address" class="sr-only">Email address</label>
+          <input id="email-address" type="email" name="email" required placeholder="Tu email de trabajo" autocomplete="email" class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+          <button type="submit" class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Recibir insights</button>
+        </div>
+      </div>
+      <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+        <div class="flex flex-col items-start">
+          <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+              <path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <dt class="mt-4 text-base font-semibold text-white">Contenido semanal con sentido</dt>
+          <dd class="mt-2 text-base/7 text-gray-400">Pensado para dueños y equipos que necesitan resultados, no teorías.</dd>
+        </div>
+        <div class="flex flex-col items-start">
+          <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+              <path d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <dt class="mt-4 text-base font-semibold text-white">Cero spam, cero humo</dt>
+          <dd class="mt-2 text-base/7 text-gray-400">No enviamos promociones innecesarias ni correos vacíos.
+
+            Te puedes dar de baja en cualquier momento.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  <div aria-hidden="true" class="absolute top-0 left-1/2 -z-10 -translate-x-1/2 blur-3xl xl:-top-6">
+    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
+  </div>
+</div>
+
+</body>
+</html>
