@@ -61,7 +61,6 @@ export default function CTASection() {
             href={CV_FILE_URL}
             target="_blank"
             rel="noreferrer"
-            download
             className="liquid-glass rounded-full pl-6 pr-7 py-3 flex items-center gap-2.5 text-white text-sm font-medium hover:bg-white/5 transition-colors"
           >
             <Download size={18} />

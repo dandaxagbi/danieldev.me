@@ -165,7 +165,6 @@ export default function Hero() {
               href={CV_FILE_URL}
               target="_blank"
               rel="noreferrer"
-              download
               className="liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium hover:bg-white/5 transition-colors"
             >
               Download CV
@@ -176,7 +175,7 @@ export default function Hero() {
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[20%]">
         <h1
-          className="text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap mb-8"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white tracking-tight md:whitespace-nowrap mb-8"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           Strategy meets <em className="italic">code</em>.
