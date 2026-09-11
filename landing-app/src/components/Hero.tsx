@@ -6,6 +6,8 @@ const HERO_VIDEO_URL =
 
 const CONTACT_EMAIL = 'danielaguilarbishop@gmail.com'
 const WHATSAPP_NUMBER = '15716649245'
+const LINKEDIN_URL = 'https://www.linkedin.com/in/daniel-aguilar-bishop/'
+const CV_FILE_URL = 'CV-Daniel-Aguilar-Bishop.pdf'
 
 function animateOpacity(
   video: HTMLVideoElement,
@@ -115,15 +117,23 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-white text-sm font-medium hidden sm:inline">
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="text-white text-sm font-medium hidden sm:inline hover:text-white/80 transition-colors"
+            >
               LinkedIn
-            </span>
-            <button
-              type="button"
+            </a>
+            <a
+              href={CV_FILE_URL}
+              target="_blank"
+              rel="noreferrer"
+              download
               className="liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium hover:bg-white/5 transition-colors"
             >
               Download CV
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -165,7 +175,9 @@ export default function Hero() {
 
       <div className="relative z-10 flex justify-center gap-4 pb-12">
         <a
-          href="#"
+          href={LINKEDIN_URL}
+          target="_blank"
+          rel="noreferrer"
           aria-label="LinkedIn"
           className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all"
         >
