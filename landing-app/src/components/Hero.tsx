@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Linkedin, Mail, MessageCircle } from 'lucide-react'
 
-const HERO_VIDEO_URL =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4'
+const HERO_VIDEO_URL = 'videos/hero.mp4'
 
 const CONTACT_EMAIL = 'danielaguilarbishop@gmail.com'
 const WHATSAPP_NUMBER = '15716649245'
@@ -32,22 +31,41 @@ function animateOpacity(
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const isFadingOutRef = useRef(false)
+  // CloudFront serves this file without a "faststart" moov atom, so while it's
+  // still downloading, Chrome can briefly report a much shorter `duration`
+  // than the real one. Track the largest duration we've observed and ignore
+  // any smaller/unstable reading, otherwise the "near the end" check below
+  // fires too early and repeatedly, looking like the video is looping every
+  // 1-2 seconds during the initial load.
+  const maxDurationRef = useRef(0)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
     video.style.opacity = '0'
+    maxDurationRef.current = 0
 
     const handleCanPlay = () => {
       video.play().catch(() => {})
       animateOpacity(video, 0, 1, 500)
     }
 
+    const MIN_RELIABLE_DURATION = 2 // seconds
+
     const handleTimeUpdate = () => {
-      if (!video.duration || Number.isNaN(video.duration)) return
-      const remaining = video.duration - video.currentTime
-      if (remaining <= 0.55 && !isFadingOutRef.current) {
+      const reported = video.duration
+      if (!reported || Number.isNaN(reported) || !Number.isFinite(reported)) {
+        return
+      }
+      if (reported > maxDurationRef.current) {
+        maxDurationRef.current = reported
+      }
+      const duration = maxDurationRef.current
+      if (duration < MIN_RELIABLE_DURATION) return
+
+      const remaining = duration - video.currentTime
+      if (remaining <= 0.55 && remaining >= 0 && !isFadingOutRef.current) {
         isFadingOutRef.current = true
         const currentOpacity = parseFloat(video.style.opacity || '1')
         animateOpacity(video, currentOpacity, 0, 500)
@@ -85,6 +103,8 @@ export default function Hero() {
         autoPlay
         playsInline
         preload="auto"
+        // @ts-expect-error fetchPriority is valid HTML but missing from React's video element types
+        fetchpriority="high"
         style={{ opacity: 0 }}
       />
 
