@@ -9,7 +9,8 @@ const CARDS = [
     tag: 'Marketing & SEO/GEO',
     title: 'Strategy & Visibility',
     description:
-      'Technical SEO/GEO audits, structured data (JSON-LD / Schema.org), and Google and Meta Ads campaigns, built from 14+ years at AIM Internet Marketing, HCMedic, and my own agency, Adwise Online Marketing.',
+      'Technical SEO/GEO audits, structured data (JSON-LD/Schema.org), and Google and Meta Ads campaigns, built from 14+ years at AIM Internet Marketing, HCMedic, and my own agency, Adwise Online Marketing. Recent work includes shipping a 398-instance JSON-LD architecture with zero validation errors, auditing 2,491 URLs for a public-sector client, and running AI-visibility baselines across Google, Perplexity, and ChatGPT.',
+    stats: ['SEO/GEO Audits', 'Structured Data (JSON-LD)', 'Google & Meta Ads'],
   },
   {
     video:
@@ -17,7 +18,8 @@ const CARDS = [
     tag: 'Development',
     title: 'Front-End & AI Tooling',
     description:
-      'I build real products with React, TypeScript, and Next.js, like the new AIM Internet Marketing site, and use Claude Code and MCP integrations to connect AI directly to marketing and analytics tools.',
+      'I ship real products end to end: the new AIM Internet Marketing site (40+ pages, multilingual), and Bizlytics, my own venture, including a WhatsApp chatbot with multi-LLM lead qualification, a CRM, and an e-learning platform. AI-assisted development with Claude Code lets me build and QA faster without cutting corners.',
+    stats: ['React · Next.js · TypeScript', 'Claude Code', 'Multi-LLM Products'],
   },
 ]
 
@@ -63,12 +65,14 @@ function ServiceCard({
   tag,
   title,
   description,
+  stats,
   delay,
 }: {
   video: string
   tag: string
   title: string
   description: string
+  stats: string[]
   delay: number
 }) {
   const ref = useRef(null)
@@ -107,7 +111,19 @@ function ServiceCard({
         <h3 className="text-white text-xl md:text-2xl mb-3 tracking-tight">
           {title}
         </h3>
-        <p className="text-white/50 text-sm leading-relaxed">{description}</p>
+        <p className="text-white/50 text-sm leading-relaxed mb-4">
+          {description}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {stats.map((stat) => (
+            <span
+              key={stat}
+              className="liquid-glass rounded-full px-3 py-1 text-white/70 text-xs"
+            >
+              {stat}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   )

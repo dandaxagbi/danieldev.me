@@ -32,25 +32,25 @@ export default function FeaturedVideoSection() {
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
             <div className="liquid-glass rounded-2xl p-6 md:p-8 max-w-md">
               <p className="text-white/50 text-xs tracking-widest uppercase mb-3">
-                Our Approach
+                A recent case
               </p>
               <p className="text-white text-sm md:text-base leading-relaxed">
-                I combine digital marketing, front-end development, and
-                applied AI in the projects I build, from AIM's own website
-                migration to React and Next.js, to Bizlytics, my own venture.
-                Claude Code and MCP integrations connect the strategy side to
-                the code that ships it.
+                Google was confusing a coaching client with an unrelated
+                academic of the same name. I built a dedicated entity page
+                and an 18-page, 398-instance structured-data architecture to
+                fix it, then tracked the visibility gains across Google,
+                Perplexity, and ChatGPT.
               </p>
             </div>
 
-            <motion.button
-              type="button"
+            <motion.a
+              href="#portfolio"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium"
             >
               See my projects
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>

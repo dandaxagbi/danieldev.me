@@ -1,0 +1,25 @@
+# Daniel Aguilar Bishop
+
+> AI/Prompt Engineer, Front-End Developer, and Senior Digital Marketer based in Cochabamba, Bolivia, with 14+ years turning marketing strategy into shipped products.
+
+Daniel combines three disciplines: applied AI (prompt engineering, Claude Code, MCP integrations), front-end development (React, TypeScript, Next.js), and digital marketing (SEO, GEO/AEO, Google and Meta Ads). He currently works as Project Manager / Web Developer / SEO-GEO Strategist at AIM Internet Marketing and Marketing Director at HCMedic, and founded Bizlytics, an AI-driven venture building marketing automation and SaaS products for Latin American businesses.
+
+## Background
+
+- 14+ years in digital marketing, starting at AIM Internet Marketing and Adwise Online Marketing (founder) in 2012.
+- Author of "El Médico Visible," a book on medical marketing, SEO, and GEO for medical practices (https://elmedicovisible.com).
+- International speaker at FISODERMA 2.0, Asunción, Paraguay, August 15-16, 2026, on business intelligence and digital transformation for medical practices.
+- Degree in Communications & Journalism, Aquino University, Bolivia (2005-2010).
+- 60+ courses and certifications across AI, front-end development, digital marketing, and communication.
+
+## Work
+
+- AIM Internet Marketing (https://www.aim-internet-marketing.com): designed and built a new multilingual marketing website in Next.js, React, and TypeScript, and runs technical SEO/GEO audits and structured-data work for clients.
+- Bizlytics (https://www.bizlyticsgrowth.com): founder, building an AI-driven WhatsApp chatbot, CRM, e-learning platform, and vertical SaaS products.
+- HCMedic (https://www.hcmedic.com): Marketing Director, leading an international marketing team and training programs.
+
+## Contact
+
+- Email: danielaguilarbishop@gmail.com
+- LinkedIn: https://www.linkedin.com/in/daniel-aguilar-bishop/
+- CV: https://danieldev.me/CV-Daniel-Aguilar-Bishop.pdf

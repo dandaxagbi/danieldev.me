@@ -6,4 +6,9 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: './',
   plugins: [react(), tailwindcss()],
+  build: {
+    // Avoid colliding with the repo's existing root /assets folder
+    // (used by other live subsites: /cv, /bizlytics, etc.)
+    assetsDir: 'app-assets',
+  },
 })

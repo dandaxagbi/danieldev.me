@@ -46,6 +46,35 @@ export default function AboutSection() {
             build, launch, and grow.
           </span>
         </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex items-center gap-5 mt-8 max-w-2xl"
+        >
+          <img
+            src="profile-photo.png"
+            alt="Daniel Aguilar Bishop"
+            className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shrink-0"
+          />
+          <p className="text-white/70 text-lg md:text-xl">
+            I&apos;m Daniel Aguilar Bishop, AI/Prompt Engineer, Front-End
+            Developer, and Senior Digital Marketer based in Cochabamba,
+            Bolivia.
+          </p>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-white/50 text-sm md:text-base mt-6 max-w-2xl"
+        >
+          I&apos;ve also written a book on medical marketing, El Médico
+          Visible, and spoken internationally on healthcare technology at
+          FISODERMA 2.0 in Asunción, Paraguay.
+        </motion.p>
       </div>
     </section>
   )

@@ -69,7 +69,10 @@ export default function PhilosophySection() {
                 Internet Marketing, have shaped how I approach strategy: SEO
                 and GEO audits, structured data, Google and Meta Ads
                 campaigns, and a focus on how AI-driven search is changing how
-                people find and evaluate brands.
+                people find and evaluate brands. As Marketing Director at
+                HCMedic, I also lead an international team and built training
+                programs that took new hires from onboarding to
+                client-ready.
               </p>
             </div>
 

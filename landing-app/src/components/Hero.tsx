@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { ArrowRight, Globe, Linkedin, Mail, MessageCircle } from 'lucide-react'
+import { Linkedin, Mail, MessageCircle } from 'lucide-react'
 
 const HERO_VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4'
@@ -91,17 +91,15 @@ export default function Hero() {
       <nav className="relative z-20 px-6 py-6">
         <div className="liquid-glass rounded-full max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center">
-            <Globe size={24} className="text-white" />
+            <img
+              src="profile-photo.png"
+              alt="Daniel Aguilar Bishop"
+              className="w-9 h-9 rounded-full object-cover"
+            />
             <span className="text-white font-semibold text-lg ml-2">
               Daniel Aguilar Bishop
             </span>
             <div className="hidden md:flex items-center gap-8 ml-8">
-              <a
-                href="#services"
-                className="text-white/80 hover:text-white text-sm font-medium transition-colors"
-              >
-                Work
-              </a>
               <a
                 href="#about"
                 className="text-white/80 hover:text-white text-sm font-medium transition-colors"
@@ -109,7 +107,25 @@ export default function Hero() {
                 About
               </a>
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href="#services"
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+              >
+                Services
+              </a>
+              <a
+                href="#portfolio"
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+              >
+                Work
+              </a>
+              <a
+                href="#education"
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+              >
+                Education
+              </a>
+              <a
+                href="#contact"
                 className="text-white/80 hover:text-white text-sm font-medium transition-colors"
               >
                 Contact
@@ -146,21 +162,7 @@ export default function Hero() {
           Strategy meets <em className="italic">code</em>.
         </h1>
 
-        <a href={`mailto:${CONTACT_EMAIL}`} className="max-w-xl w-full">
-          <div className="liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3">
-            <input
-              type="email"
-              placeholder="Your email"
-              readOnly
-              className="flex-1 bg-transparent outline-none text-white placeholder:text-white/40 cursor-pointer"
-            />
-            <div className="bg-white rounded-full p-3 text-black">
-              <ArrowRight size={20} />
-            </div>
-          </div>
-        </a>
-
-        <p className="text-white text-sm leading-relaxed px-4 mt-6 max-w-xl">
+        <p className="text-white text-sm leading-relaxed px-4 max-w-xl">
           Front-end development, AI-driven marketing, and 14+ years turning
           strategy into results.
         </p>
