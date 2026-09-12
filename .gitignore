@@ -1,0 +1,19 @@
+# Agent folders (may hold credentials/tokens)
+.claude/settings.local.json
+
+# Node / builds
+node_modules/
+dist/
+.next/
+out/
+
+# Env
+.env
+.env.local
+.env*.local
+
+# Vercel
+.vercel
+
+# OS
+.DS_Store
