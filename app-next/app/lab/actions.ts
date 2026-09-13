@@ -19,13 +19,13 @@ export async function validatePasscode(
 
   // Mensaje genérico a propósito: no distinguir casos, no dar pistas (FR: US2).
   if (!passcode || !checkPasscode(passcode)) {
-    return { error: "Passcode incorrecto, intenta de nuevo." };
+    return { error: "Incorrect passcode, try again." };
   }
 
   const sessionValue = await createSessionValue();
   if (!sessionValue) {
     // LAB_SESSION_SECRET no configurado en el entorno: fail-safe, no dejar pasar.
-    return { error: "No se pudo iniciar sesión. Intenta más tarde." };
+    return { error: "Couldn't start a session. Try again later." };
   }
 
   const cookieStore = await cookies();

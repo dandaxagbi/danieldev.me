@@ -2,7 +2,7 @@ import Link from "next/link";
 import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
-  { title: "retail-scheduling", status: "En desarrollo" },
+  { title: "retail-scheduling", status: "In progress" },
 ];
 
 export default function LabPage() {
@@ -25,7 +25,7 @@ export default function LabPage() {
             href="/"
             className="text-white/60 hover:text-white text-xs transition-colors"
           >
-            ← volver al sitio
+            ← back to the site
           </Link>
         </div>
       </nav>
@@ -39,8 +39,8 @@ export default function LabPage() {
             /lab
           </h1>
           <p className="text-white/80 text-sm leading-relaxed mt-4">
-            Acá desarrollo ideas para clientes que me interesan, antes de que
-            sean un proyecto formal.
+            I build things here for clients I&apos;m genuinely excited to work
+            with, before any of it becomes a formal project.
           </p>
         </div>
 

@@ -86,10 +86,11 @@ function ServiceCard({
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay }}
+      className="h-full"
     >
       <a
         href="#portfolio"
-        className="liquid-glass rounded-3xl overflow-hidden group block"
+        className="liquid-glass rounded-3xl overflow-hidden group flex flex-col h-full"
       >
         <div className="aspect-video relative overflow-hidden">
           <video
@@ -104,7 +105,7 @@ function ServiceCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         </div>
 
-        <div className="p-6 md:p-8">
+        <div className="p-6 md:p-8 flex flex-col flex-1">
           <div className="flex items-start justify-between mb-4">
             <span className="uppercase tracking-widest text-white/40 text-xs">
               {tag}
@@ -116,7 +117,7 @@ function ServiceCard({
           <h3 className="text-white text-xl md:text-2xl mb-3 tracking-tight">
             {title}
           </h3>
-          <p className="text-white/50 text-sm leading-relaxed mb-4">
+          <p className="text-white/50 text-sm leading-relaxed mb-4 flex-1">
             {description}
           </p>
           <div className="flex flex-wrap gap-2">

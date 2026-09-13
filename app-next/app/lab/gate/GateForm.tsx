@@ -29,7 +29,7 @@ export default function GateForm({ from }: { from: string }) {
         disabled={isPending}
         className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors disabled:opacity-50"
       >
-        {isPending ? "Entrando..." : "Entrar"}
+        {isPending ? "Entering..." : "Enter"}
       </button>
 
       {state.error ? (

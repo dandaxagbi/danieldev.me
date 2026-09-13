@@ -21,7 +21,7 @@ export default async function GatePage({
         className="w-14 h-14 rounded-full object-cover"
       />
 
-      <div>
+      <div className="max-w-sm">
         <p className="text-white text-lg font-semibold">
           Daniel Aguilar Bishop
         </p>
@@ -29,8 +29,14 @@ export default async function GatePage({
           className="text-2xl italic mt-2"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
-          Un espacio donde pruebo ideas.
+          This is my lab.
         </h1>
+        <p className="text-white/70 text-sm leading-relaxed mt-4">
+          A private space where I prototype ideas — marketing, product,
+          front-end — for clients I&apos;m genuinely excited to work with,
+          before any of it becomes a formal pitch. If you have a passcode, I
+          have something to show you.
+        </p>
       </div>
 
       <GateForm from={from ?? "/lab"} />
