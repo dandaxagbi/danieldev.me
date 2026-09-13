@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, MessageCircle } from "lucide-react";
 import { logout } from "../actions";
+import { ConceptVideo } from "./ConceptVideo";
+import { ImageCarousel, type CampaignSlide } from "./ImageCarousel";
 
 const CONTACT_EMAIL = "danielaguilarbishop@gmail.com";
 const WHATSAPP_NUMBER = "15716649245";
@@ -12,24 +14,63 @@ export const metadata: Metadata = {
 };
 
 const TOC = [
-  { id: "about", label: "What is TWS" },
+  { id: "about", label: "Why this angle" },
   { id: "video", label: "Concept video" },
   { id: "images", label: "Campaign images" },
+  { id: "persona", label: "Buyer persona" },
   { id: "next", label: "What's next" },
 ];
 
-const IMAGE_CONCEPTS = [
+const CAMPAIGN_SLIDES: CampaignSlide[] = [
   {
+    id: "whatsapp-4x5",
     title: "End of WhatsApp chaos",
     copy: "Stop chasing availability over WhatsApp.",
+    image: "/lab/retail-scheduling/images/image1.jpg",
+    size: "1080×1350 (4:5, feed)",
+    angle:
+      "Survival instinct — the threat of losing control of scheduling, resolved.",
   },
   {
+    id: "whatsapp-1x1",
+    title: "End of WhatsApp chaos",
+    copy: "Stop chasing availability over WhatsApp.",
+    image: "/lab/retail-scheduling/images/image1-square.jpg",
+    size: "1080×1080 (1:1, feed/grid)",
+    angle:
+      "Survival instinct — the threat of losing control of scheduling, resolved.",
+  },
+  {
+    id: "visibility-4x5",
     title: "Full floor visibility",
-    copy: "You know who's working right now. Always.",
+    copy: "Know who's working right now. Always.",
+    image: "/lab/retail-scheduling/images/image2.jpg",
+    size: "1080×1350 (4:5, feed)",
+    angle: "Status instinct — looking in control in front of leadership.",
   },
   {
+    id: "visibility-1x1",
+    title: "Full floor visibility",
+    copy: "Know who's working right now. Always.",
+    image: "/lab/retail-scheduling/images/image2-square.jpg",
+    size: "1080×1080 (1:1, feed/grid)",
+    angle: "Status instinct — looking in control in front of leadership.",
+  },
+  {
+    id: "payroll-4x5",
     title: "Payroll without surprises",
     copy: "Payroll errors that stop being your problem.",
+    image: "/lab/retail-scheduling/images/image3.jpg",
+    size: "1080×1350 (4:5, feed)",
+    angle: "Survival instinct, loss framing — what today's errors cost her.",
+  },
+  {
+    id: "payroll-1x1",
+    title: "Payroll without surprises",
+    copy: "Payroll errors that stop being your problem.",
+    image: "/lab/retail-scheduling/images/image3-square.jpg",
+    size: "1080×1080 (1:1, feed/grid)",
+    angle: "Survival instinct, loss framing — what today's errors cost her.",
   },
 ];
 
@@ -121,8 +162,16 @@ export default function RetailSchedulingHub() {
       </nav>
 
       {/* HERO */}
-      <section className="px-6 pt-4 pb-12 border-b border-white/10">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative px-6 pt-4 pb-16 min-h-[420px] flex items-end border-b border-white/10 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/lab/retail-scheduling/images/hero-bg.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-[65%_15%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/50" />
+
+        <div className="relative max-w-5xl mx-auto">
           <div className="flex items-center gap-2 text-white/40 text-xs mb-6">
             <span>Lab</span>
             <span>›</span>
@@ -136,10 +185,10 @@ export default function RetailSchedulingHub() {
             Welcome, Mark.
           </h1>
           <p className="text-white/70 text-sm leading-relaxed max-w-xl">
-            A first pass at a retail-focused campaign concept for
-            TimeWellScheduled — real product screens instead of generic
-            mockups, built around what actually shows up on the floor:
-            scheduling chaos, staff visibility, and payroll accuracy.
+            A retail-focused campaign concept for TimeWellScheduled — built
+            around the real product and the real reasons a store manager
+            switches: scheduling chaos, staff visibility, and payroll
+            accuracy. No stock photography, no generic mockups.
           </p>
         </div>
       </section>
@@ -149,16 +198,17 @@ export default function RetailSchedulingHub() {
         <div className="flex flex-col gap-16">
           <section id="about" className="scroll-mt-24">
             <h2 className="text-white text-lg font-medium mb-4">
-              What is TWS
+              Why this angle
             </h2>
             <p className="text-white/70 text-sm leading-relaxed max-w-xl">
-              TimeWellScheduled is workforce management software for teams
-              that work in shifts — scheduling, time &amp; attendance, and
-              payroll integration in one place, built mostly for retail,
-              restaurants, hospitality, and long-term care. There&apos;s a
-              lot of ground we could cover together. This hub is one
-              possible starting point: creative advertising campaigns built
-              around what TWS actually looks like, not stock photography.
+              Most workforce-management ads in this category — Homebase,
+              Deputy, 7shifts included — lean on generic stock photography of
+              &quot;stressed manager, empty schedule board.&quot; TWS already
+              has something they don&apos;t: real customers, real screens,
+              real results (Canadian Tire, Party City, Lina&apos;s Italian
+              Market). This concept is built entirely around that — the
+              actual product, shown to the person who actually decides to buy
+              it, for the reason she actually buys it.
             </p>
           </section>
 
@@ -166,10 +216,12 @@ export default function RetailSchedulingHub() {
             <h2 className="text-white text-lg font-medium mb-4">
               Concept video
             </h2>
-            <div className="liquid-glass rounded-2xl aspect-video flex items-center justify-center">
-              <p className="text-white/40 text-sm">
-                Video in production — coming soon.
-              </p>
+            <p className="text-white/70 text-sm leading-relaxed max-w-xl mb-4">
+              A 36-second spot built around a single turn: the tension of
+              scheduling chaos, resolved the moment TWS shows up on screen.
+            </p>
+            <div className="liquid-glass rounded-2xl overflow-hidden">
+              <ConceptVideo src="/lab/retail-scheduling/concept-video.mp4" />
             </div>
           </section>
 
@@ -177,27 +229,100 @@ export default function RetailSchedulingHub() {
             <h2 className="text-white text-lg font-medium mb-4">
               Campaign images
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {IMAGE_CONCEPTS.map((concept) => (
-                <div
-                  key={concept.title}
-                  className="liquid-glass rounded-2xl overflow-hidden flex flex-col"
-                >
-                  <div className="aspect-[4/5] flex items-center justify-center border-b border-white/10">
-                    <p className="text-white/30 text-xs px-4 text-center">
-                      Coming soon
-                    </p>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-white text-sm font-medium">
-                      {concept.title}
-                    </p>
-                    <p className="text-white/50 text-xs mt-1 leading-relaxed">
-                      {concept.copy}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <p className="text-white/70 text-sm leading-relaxed max-w-xl mb-4">
+              Three static concepts, each isolating one of TWS&apos;s
+              highest-leverage moments — sized and ready for feed placement.
+            </p>
+            <ImageCarousel slides={CAMPAIGN_SLIDES} />
+          </section>
+
+          <section id="persona" className="scroll-mt-24">
+            <h2 className="text-white text-lg font-medium mb-4">
+              Buyer persona — the reasoning behind the campaign
+            </h2>
+            <p className="text-white/70 text-sm leading-relaxed max-w-xl mb-6">
+              Before writing a single line of copy, I mapped who actually
+              decides to buy or renew TWS at a multi-store retail chain, using
+              a consumer-psychology framework (evolutionary instincts,
+              Kahneman &amp; Tversky&apos;s loss aversion, trust theory).
+              Here&apos;s the short version.
+            </p>
+
+            <div className="flex flex-col gap-5 max-w-xl">
+              <div className="liquid-glass rounded-2xl px-5 py-5">
+                <p className="text-white text-sm font-medium mb-1">
+                  Who she is
+                </p>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  &quot;Renata&quot; — an Operations / District Manager
+                  running 3–12 retail locations, 32–48 years old. She
+                  doesn&apos;t own the business and didn&apos;t build the
+                  software; she&apos;s the one who lives the operational pain
+                  daily and pushes upward to get a tool like TWS approved or
+                  renewed.
+                </p>
+              </div>
+
+              <div className="liquid-glass rounded-2xl px-5 py-5">
+                <p className="text-white text-sm font-medium mb-1">
+                  The instinct driving her
+                </p>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  <span className="text-white/80">Survival, first</span> —
+                  every miscalculated hour, uncovered shift, and payroll error
+                  is a direct threat to budget, time, and her own standing.{" "}
+                  <span className="text-white/80">Status, second</span> —
+                  being the manager whose store &quot;never has surprises&quot;
+                  in front of her peers. TWS&apos;s current messaging talks
+                  about features (scheduling, punch clock, reports), not the
+                  threat it actually removes.
+                </p>
+              </div>
+
+              <div className="liquid-glass rounded-2xl px-5 py-5">
+                <p className="text-white text-sm font-medium mb-1">
+                  What she&apos;s really buying
+                </p>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  Not &quot;scheduling software&quot; — <span className="text-white/80">operational peace of mind</span>{" "}
+                  and a version of herself that has everything under control
+                  in front of her team and her boss. Initial tension:
+                  building schedules by hand, chasing availability over
+                  WhatsApp at 6am, discovering payroll errors after payday.
+                  Desired state: feeling in control, not exposed.
+                </p>
+              </div>
+
+              <div className="liquid-glass rounded-2xl px-5 py-5">
+                <p className="text-white text-sm font-medium mb-1">
+                  The loss-aversion angle
+                </p>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  Following Kahneman &amp; Tversky: don&apos;t frame this as
+                  &quot;save X hours a week&quot; — frame it as{" "}
+                  <span className="text-white/80">
+                    what not having this is already costing her today
+                  </span>{" "}
+                  (lost hours, payroll mistakes, time spent chasing people
+                  down). Loss framing lands harder than gain framing here.
+                </p>
+              </div>
+
+              <div className="liquid-glass rounded-2xl px-5 py-5">
+                <p className="text-white text-sm font-medium mb-1">
+                  Why the campaign stays grounded
+                </p>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  Some public app-store reviews mention friction on the
+                  employee side. Rather than promise a flawless app the
+                  campaign can&apos;t back up, this concept leans on the
+                  flows that already land well — scheduling and real-time
+                  &quot;Who&apos;s Working&quot; visibility. Keeping the
+                  promise and the product in sync is what builds trust
+                  (Prahalad &amp; Ramaswamy&apos;s DART model) instead of
+                  eroding it.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -206,10 +331,30 @@ export default function RetailSchedulingHub() {
               What&apos;s next
             </h2>
             <p className="text-white/70 text-sm leading-relaxed max-w-xl">
-              This is just a first pass — I&apos;m still finishing the video
-              and images. Happy to keep iterating on this if it&apos;s useful
-              to you.
+              This is a first pass, built to test the idea rather than sell
+              it — if the direction resonates, I can adapt it for other
+              verticals (restaurants, hospitality, long-term care), test
+              variants, or take it further toward something launch-ready.
+              Tell me what you&apos;d change.
             </p>
+            <div className="flex flex-wrap gap-3 mt-6">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="liquid-glass rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-medium hover:bg-white/5 transition-colors"
+              >
+                <Mail size={15} />
+                Email me
+              </a>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noreferrer"
+                className="liquid-glass rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-medium hover:bg-white/5 transition-colors"
+              >
+                <MessageCircle size={15} />
+                WhatsApp me
+              </a>
+            </div>
           </section>
 
           {/* Mobile-only: the desktop sidebar is hidden below md, so the
