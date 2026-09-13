@@ -1,13 +1,13 @@
 "use client";
 
 import { useActionState } from "react";
-import { validatePasscode, type GateState } from "../actions";
+import { validateCredentials, type GateState } from "../actions";
 
 const initialState: GateState = {};
 
 export default function GateForm({ from }: { from: string }) {
   const [state, formAction, isPending] = useActionState(
-    validatePasscode,
+    validateCredentials,
     initialState,
   );
 
@@ -16,11 +16,21 @@ export default function GateForm({ from }: { from: string }) {
       <input type="hidden" name="from" value={from} />
 
       <input
-        type="password"
-        name="passcode"
-        placeholder="passcode"
+        type="text"
+        name="username"
+        placeholder="username"
         autoFocus
         required
+        autoComplete="username"
+        className="liquid-glass rounded-full px-6 py-3 text-white text-sm text-center placeholder:text-white/40 outline-none w-full"
+      />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="password"
+        required
+        autoComplete="current-password"
         className="liquid-glass rounded-full px-6 py-3 text-white text-sm text-center placeholder:text-white/40 outline-none w-full"
       />
 

@@ -3,23 +3,24 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import {
-  checkPasscode,
+  checkCredentials,
   createSessionValue,
   LAB_SESSION_COOKIE_NAME,
 } from "@/lib/lab-session";
 
 export type GateState = { error?: string };
 
-export async function validatePasscode(
+export async function validateCredentials(
   _prevState: GateState,
   formData: FormData,
 ): Promise<GateState> {
-  const passcode = String(formData.get("passcode") ?? "");
+  const username = String(formData.get("username") ?? "");
+  const password = String(formData.get("password") ?? "");
   const from = String(formData.get("from") ?? "/lab");
 
-  // Mensaje genérico a propósito: no distinguir casos, no dar pistas (FR: US2).
-  if (!passcode || !checkPasscode(passcode)) {
-    return { error: "Incorrect passcode, try again." };
+  // Mensaje genérico a propósito: no distinguir usuario vs. contraseña.
+  if (!username || !password || !checkCredentials(username, password)) {
+    return { error: "Incorrect username or password, try again." };
   }
 
   const sessionValue = await createSessionValue();

@@ -48,6 +48,8 @@ body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
 
 **Layout (mobile-first, es el caso de uso principal de esta primera revisión):**
 
+*Amendment (2026-09-13): el gate pasó de un solo campo de passcode a usuario+contraseña, para poder personalizar el login por destinatario (ej. usuario `Mark` para el proyecto `retail-scheduling` de TWS). El mockup de abajo refleja esta versión.*
+
 ```
 ┌─────────────────────────────┐
 │                             │  ← fondo #000, sin nav, sin video
@@ -56,29 +58,35 @@ body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
 │                             │
 │   Daniel Aguilar Bishop     │  ← text-white, text-lg, font-semibold
 │                             │
-│   "Un espacio donde         │  ← font-serif-display italic, text-2xl
-│    pruebo ideas."           │
+│   "This is my lab."         │  ← font-serif-display italic, text-2xl
+│   (párrafo explicativo)     │  ← text-white/70 text-sm, ver copy real en page.tsx
 │                             │
 │  ┌───────────────────────┐  │
-│  │  · · · · · · (input)  │  │  ← liquid-glass rounded-full, type=password
+│  │  username              │  │  ← liquid-glass rounded-full, type=text
+│  └───────────────────────┘  │
+│  ┌───────────────────────┐  │
+│  │  · · · · · · (password)│  │  ← liquid-glass rounded-full, type=password
 │  └───────────────────────┘  │
 │                             │
 │  ┌───────────────────────┐  │
-│  │       Entrar           │  │  ← liquid-glass rounded-full, botón submit
+│  │        Enter            │  │  ← liquid-glass rounded-full, botón submit
 │  └───────────────────────┘  │
 │                             │
 │  (mensaje de error aquí,    │  ← text-white/60 text-xs, solo si aplica
-│   si el passcode es          │
-│   incorrecto)                │
+│   si las credenciales son   │
+│   incorrectas)               │
+│                             │
+│   ← back to danieldev.me    │  ← text-white/40 text-xs, salida siempre visible
 │                             │
 └─────────────────────────────┘
 ```
 
 - Centrado vertical y horizontal, un solo bloque, sin scroll en mobile.
-- El input de passcode es `type="password"`, sin label visible más allá de un placeholder discreto (`"passcode"`, minúscula, `text-white/40`).
-- El botón "Entrar" reusa exactamente la clase `liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors` del CTA del Hero — cero estilos nuevos.
-- Mensaje de error: una sola línea, tono neutro ("passcode incorrecto, intenta de nuevo") — nunca alarmante, nunca con íconos de candado/seguridad (eso rompe el tono discreto y lo acerca a "producto de seguridad", que la constitución explícitamente evita).
-- Sin logo de "TWS" ni de ningún cliente visible en esta pantalla — es la puerta de entrada a todo `/lab`, es agnóstica de cliente.
+- Los inputs de usuario/contraseña no llevan label visible más allá de un placeholder discreto (`"username"` / `"password"`, minúscula, `text-white/40`).
+- El botón "Enter" reusa exactamente la clase `liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors` del CTA del Hero — cero estilos nuevos.
+- Mensaje de error: una sola línea, tono neutro ("incorrect username or password, try again") — nunca alarmante, nunca con íconos de candado/seguridad (eso rompe el tono discreto y lo acerca a "producto de seguridad", que la constitución explícitamente evita).
+- Sin logo de "TWS" ni de ningún cliente visible en esta pantalla — es la puerta de entrada a todo `/lab`, es agnóstica de cliente. La personalización vive únicamente en el valor del usuario (ej. "Mark"), nunca en el diseño de la pantalla.
+- Link de salida "← back to danieldev.me" siempre visible, para quien llega sin contexto o cambia de opinión.
 
 ## 3. Landing de /lab (post-gate)
 

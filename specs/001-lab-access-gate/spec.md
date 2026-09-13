@@ -6,6 +6,8 @@
 
 **Status**: Draft
 
+**Amendment (2026-09-13)**: el gate cambió de un passcode único a **usuario + contraseña** (par fijo por variables de entorno `LAB_USERNAME`/`LAB_PASSWORD`, no una tabla de usuarios), para poder personalizar el login por destinatario — ej. usuario `Mark` para el proyecto `retail-scheduling` de TWS. Las menciones a "passcode" más abajo son el diseño original; donde importa el detalle exacto (Functional Requirements) ya están actualizadas.
+
 **Input**: User description: "sección /lab del sitio danieldev.me — gate de passcode brandeado para toda la sección, más la página de landing que explica qué es el espacio y lista proyectos como cards (retail-scheduling como primer proyecto, en desarrollo). Sin cuentas de usuario, sin roles, sin indexación."
 
 ## User Scenarios & Testing *(mandatory)*
@@ -69,14 +71,14 @@ Una vez dentro, el visitante ve la landing de `/lab` y entiende en segundos de q
 
 - **FR-001**: El sistema DEBE proteger toda ruta bajo `/lab/*` con un middleware que verifique una cookie de sesión antes de servir contenido.
 - **FR-002**: El sistema DEBE mostrar una pantalla de gate brandeada (fondo oscuro, tipografía Instrument Serif, estética liquid-glass) cuando no exista cookie de sesión válida.
-- **FR-003**: El sistema DEBE validar el passcode ingresado contra una variable de entorno (`LAB_PASSCODE`), nunca contra un valor hardcodeado en el código fuente.
-- **FR-004**: El sistema DEBE setear una cookie de sesión firmada/verificable (no un valor plano adivinable) al validar el passcode correctamente.
+- **FR-003**: El sistema DEBE validar usuario y contraseña ingresados contra variables de entorno (`LAB_USERNAME`, `LAB_PASSWORD`), nunca contra valores hardcodeados en el código fuente.
+- **FR-004**: El sistema DEBE setear una cookie de sesión firmada/verificable (no un valor plano adivinable) al validar las credenciales correctamente.
 - **FR-005**: El sistema DEBE mostrar `noindex, nofollow` en toda respuesta bajo `/lab/*`, independientemente del estado de autenticación.
 - **FR-006**: El sistema DEBE excluir toda ruta `/lab/*` de `sitemap.xml`.
 - **FR-007**: La landing de `/lab` (post-gate) DEBE comunicar en una o dos frases el propósito del espacio.
 - **FR-008**: La landing de `/lab` DEBE listar proyectos como cards, con al menos una card para `retail-scheduling` marcada como "en desarrollo" (el contenido completo de esa página es una feature futura, fuera de este alcance).
-- **FR-009**: El sistema NO DEBE implementar cuentas de usuario, roles, ni base de datos para este gate — un único passcode compartido es suficiente (constitución, principio IV).
-- **FR-010**: El middleware DEBE denegar acceso por defecto si `LAB_PASSCODE` no está configurado en el entorno (fail-safe, no fail-open).
+- **FR-009**: El sistema NO DEBE implementar un sistema de cuentas real (múltiples usuarios, roles, base de datos) para este gate — un único par usuario+contraseña fijo por variables de entorno es suficiente (constitución, principio IV).
+- **FR-010**: El middleware DEBE denegar acceso por defecto si `LAB_USERNAME` o `LAB_PASSWORD` no están configurados en el entorno (fail-safe, no fail-open).
 
 ### Key Entities
 

@@ -1,7 +1,9 @@
-// Sesión mínima para el gate de /lab: un passcode compartido + cookie firmada
-// con HMAC-SHA256 (Web Crypto API, corre tanto en Edge como en Node runtime).
-// Deliberadamente sin librerías de auth ni base de datos — ver
-// specs/001-lab-access-gate/plan.md y constitución, principio IV.
+// Sesión mínima para el gate de /lab: un único usuario/contraseña compartido
+// (sin sistema de cuentas real) + cookie firmada con HMAC-SHA256 (Web Crypto
+// API, corre tanto en Edge como en Node runtime). Deliberadamente sin
+// librerías de auth ni base de datos — ver specs/001-lab-access-gate/plan.md
+// y constitución, principio IV (amendment: username+password en vez de
+// passcode único, ver constitution.md v1.1.0).
 
 const SESSION_COOKIE_NAME = "lab_session";
 const SESSION_DURATION_MS = 30 * 24 * 60 * 60 * 1000; // 30 días
@@ -34,11 +36,20 @@ function timingSafeEqual(a: string, b: string): boolean {
   return mismatch === 0;
 }
 
-/** Compara el passcode ingresado contra LAB_PASSCODE. Fail-safe: sin env var, siempre false. */
-export function checkPasscode(input: string): boolean {
-  const expected = process.env.LAB_PASSCODE;
-  if (!expected) return false;
-  return timingSafeEqual(input, expected);
+/**
+ * Compara usuario+contraseña ingresados contra LAB_USERNAME/LAB_PASSWORD.
+ * Fail-safe: si cualquiera de las dos env vars falta, siempre false.
+ * Comparación en tiempo constante en ambos campos (no cortocircuita en el
+ * primero que falle, para no filtrar por timing cuál campo estaba mal).
+ */
+export function checkCredentials(username: string, password: string): boolean {
+  const expectedUsername = process.env.LAB_USERNAME;
+  const expectedPassword = process.env.LAB_PASSWORD;
+  if (!expectedUsername || !expectedPassword) return false;
+
+  const usernameOk = timingSafeEqual(username, expectedUsername);
+  const passwordOk = timingSafeEqual(password, expectedPassword);
+  return usernameOk && passwordOk;
 }
 
 /** Genera el valor de cookie "expiresAt.firma" para una sesión nueva. */

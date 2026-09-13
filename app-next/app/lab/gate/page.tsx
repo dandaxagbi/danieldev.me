@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import GateForm from "./GateForm";
 
 export const metadata: Metadata = {
@@ -34,12 +35,19 @@ export default async function GatePage({
         <p className="text-white/70 text-sm leading-relaxed mt-4">
           A private space where I prototype ideas — marketing, product,
           front-end — for clients I&apos;m genuinely excited to work with,
-          before any of it becomes a formal pitch. If you have a passcode, I
-          have something to show you.
+          before any of it becomes a formal pitch. If you have login details,
+          I have something to show you.
         </p>
       </div>
 
       <GateForm from={from ?? "/lab"} />
+
+      <Link
+        href="/"
+        className="text-white/40 hover:text-white/70 text-xs transition-colors"
+      >
+        ← back to danieldev.me
+      </Link>
     </main>
   );
 }
