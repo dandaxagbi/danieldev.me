@@ -36,15 +36,22 @@ export async function proxy(request: NextRequest) {
   }
 
   const cookieValue = request.cookies.get(LAB_SESSION_COOKIE_NAME)?.value;
-  const isValid = await verifySessionValue(cookieValue);
+  const session = await verifySessionValue(cookieValue);
 
-  if (isValid) {
-    return NextResponse.next();
+  if (!session.valid) {
+    return NextResponse.redirect(new URL("/lab/gate", request.url));
   }
 
-  const gateUrl = new URL("/lab/gate", request.url);
-  gateUrl.searchParams.set("from", pathname);
-  return NextResponse.redirect(gateUrl);
+  // Cada sesión pertenece a un único cliente: si pisa /lab a secas, o el hub
+  // de otro cliente, se lo manda directo al suyo — nunca a un listado
+  // genérico ni al hub de alguien más.
+  const ownHubPath = `/lab/${session.clientSlug}`;
+  const requestedSlug = pathname.split("/")[2];
+  if (!requestedSlug || requestedSlug !== session.clientSlug) {
+    return NextResponse.redirect(new URL(ownHubPath, request.url));
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {

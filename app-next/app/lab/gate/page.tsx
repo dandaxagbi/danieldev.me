@@ -6,13 +6,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function GatePage({
-  searchParams,
-}: {
-  searchParams: Promise<{ from?: string }>;
-}) {
-  const { from } = await searchParams;
-
+export default function GatePage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center gap-6">
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -40,7 +34,7 @@ export default async function GatePage({
         </p>
       </div>
 
-      <GateForm from={from ?? "/lab"} />
+      <GateForm />
 
       <Link
         href="/"

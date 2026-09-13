@@ -5,7 +5,7 @@ import { validateCredentials, type GateState } from "../actions";
 
 const initialState: GateState = {};
 
-export default function GateForm({ from }: { from: string }) {
+export default function GateForm() {
   const [state, formAction, isPending] = useActionState(
     validateCredentials,
     initialState,
@@ -13,8 +13,6 @@ export default function GateForm({ from }: { from: string }) {
 
   return (
     <form action={formAction} className="w-full max-w-xs flex flex-col gap-4">
-      <input type="hidden" name="from" value={from} />
-
       <input
         type="text"
         name="username"

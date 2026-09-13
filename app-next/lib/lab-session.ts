@@ -1,9 +1,10 @@
-// Sesión mínima para el gate de /lab: un único usuario/contraseña compartido
-// (sin sistema de cuentas real) + cookie firmada con HMAC-SHA256 (Web Crypto
-// API, corre tanto en Edge como en Node runtime). Deliberadamente sin
-// librerías de auth ni base de datos — ver specs/001-lab-access-gate/plan.md
-// y constitución, principio IV (amendment: username+password en vez de
-// passcode único, ver constitution.md v1.1.0).
+// Sesión mínima para el gate de /lab: por cliente hay un único usuario y
+// contraseña (ver lib/lab-clients.ts), sin sistema de cuentas real. La
+// cookie va firmada con HMAC-SHA256 (Web Crypto API, corre tanto en Edge
+// como en Node runtime) y lleva embebido el clientSlug — así cada hub puede
+// verificar server-side que la sesión sea la de SU cliente, no la de otro.
+// Deliberadamente sin librerías de auth ni base de datos — ver
+// specs/001-lab-access-gate/plan.md y constitución, principio IV.
 
 const SESSION_COOKIE_NAME = "lab_session";
 const SESSION_DURATION_MS = 30 * 24 * 60 * 60 * 1000; // 30 días
@@ -27,7 +28,7 @@ async function getHmacKey(): Promise<CryptoKey | null> {
   );
 }
 
-function timingSafeEqual(a: string, b: string): boolean {
+export function timingSafeEqual(a: string, b: string): boolean {
   if (a.length !== b.length) return false;
   let mismatch = 0;
   for (let i = 0; i < a.length; i++) {
@@ -36,60 +37,53 @@ function timingSafeEqual(a: string, b: string): boolean {
   return mismatch === 0;
 }
 
-/**
- * Compara usuario+contraseña ingresados contra LAB_USERNAME/LAB_PASSWORD.
- * Fail-safe: si cualquiera de las dos env vars falta, siempre false.
- * Comparación en tiempo constante en ambos campos (no cortocircuita en el
- * primero que falle, para no filtrar por timing cuál campo estaba mal).
- */
-export function checkCredentials(username: string, password: string): boolean {
-  const expectedUsername = process.env.LAB_USERNAME;
-  const expectedPassword = process.env.LAB_PASSWORD;
-  if (!expectedUsername || !expectedPassword) return false;
-
-  const usernameOk = timingSafeEqual(username, expectedUsername);
-  const passwordOk = timingSafeEqual(password, expectedPassword);
-  return usernameOk && passwordOk;
-}
-
-/** Genera el valor de cookie "expiresAt.firma" para una sesión nueva. */
-export async function createSessionValue(): Promise<string | null> {
+/** Genera el valor de cookie "expiresAt.clientSlug.firma" para una sesión nueva. */
+export async function createSessionValue(
+  clientSlug: string,
+): Promise<string | null> {
   const key = await getHmacKey();
   if (!key) return null;
   const expiresAt = Date.now() + SESSION_DURATION_MS;
-  const message = String(expiresAt);
+  const message = `${expiresAt}.${clientSlug}`;
   const signatureBuffer = await crypto.subtle.sign(
     "HMAC",
     key,
     new TextEncoder().encode(message),
   );
   const signature = toBase64Url(new Uint8Array(signatureBuffer));
-  return `${expiresAt}.${signature}`;
+  return `${message}.${signature}`;
 }
+
+export type SessionCheck =
+  | { valid: true; clientSlug: string }
+  | { valid: false; clientSlug?: undefined };
 
 /** Verifica un valor de cookie existente. Fail-safe en cualquier caso ambiguo. */
 export async function verifySessionValue(
   cookieValue: string | undefined,
-): Promise<boolean> {
-  if (!cookieValue) return false;
+): Promise<SessionCheck> {
+  if (!cookieValue) return { valid: false };
 
   const key = await getHmacKey();
-  if (!key) return false; // sin LAB_SESSION_SECRET configurado -> nunca dejar pasar
+  if (!key) return { valid: false }; // sin LAB_SESSION_SECRET -> nunca dejar pasar
 
-  const [expiresAtRaw, signature] = cookieValue.split(".");
-  if (!expiresAtRaw || !signature) return false;
+  const parts = cookieValue.split(".");
+  if (parts.length !== 3) return { valid: false };
+  const [expiresAtRaw, clientSlug, signature] = parts;
+  if (!expiresAtRaw || !clientSlug || !signature) return { valid: false };
 
   const expiresAt = Number(expiresAtRaw);
-  if (!Number.isFinite(expiresAt) || Date.now() > expiresAt) return false;
+  if (!Number.isFinite(expiresAt) || Date.now() > expiresAt) return { valid: false };
 
   const expectedSignatureBuffer = await crypto.subtle.sign(
     "HMAC",
     key,
-    new TextEncoder().encode(expiresAtRaw),
+    new TextEncoder().encode(`${expiresAtRaw}.${clientSlug}`),
   );
   const expectedSignature = toBase64Url(new Uint8Array(expectedSignatureBuffer));
 
-  return timingSafeEqual(expectedSignature, signature);
+  if (!timingSafeEqual(expectedSignature, signature)) return { valid: false };
+  return { valid: true, clientSlug };
 }
 
 export const LAB_SESSION_COOKIE_NAME = SESSION_COOKIE_NAME;

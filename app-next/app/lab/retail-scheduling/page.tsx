@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Mail, MessageCircle } from "lucide-react";
+import { logout } from "../actions";
+
+const CONTACT_EMAIL = "danielaguilarbishop@gmail.com";
+const WHATSAPP_NUMBER = "15716649245";
+const CV_FILE_URL = "/CV-Daniel-Aguilar-Bishop.pdf";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
 const TOC = [
+  { id: "about", label: "What is TWS" },
   { id: "video", label: "Concept video" },
   { id: "images", label: "Campaign images" },
   { id: "next", label: "What's next" },
@@ -26,16 +33,83 @@ const IMAGE_CONCEPTS = [
   },
 ];
 
+function ContactCTA() {
+  return (
+    <div className="liquid-glass rounded-2xl px-5 py-5 flex flex-col gap-4">
+      <p className="text-white font-medium text-sm">Let&apos;s talk</p>
+
+      <a
+        href={CV_FILE_URL}
+        target="_blank"
+        rel="noreferrer"
+        className="liquid-glass rounded-full px-4 py-2 text-white text-xs font-medium text-center hover:bg-white/5 transition-colors"
+      >
+        Download CV
+      </a>
+
+      <div className="flex flex-col gap-3">
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="flex items-center gap-2 text-white/60 hover:text-white text-xs transition-colors"
+        >
+          <Mail size={14} />
+          {CONTACT_EMAIL}
+        </a>
+        <a
+          href={`https://wa.me/${WHATSAPP_NUMBER}`}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 text-white/60 hover:text-white text-xs transition-colors"
+        >
+          <MessageCircle size={14} />
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function RetailSchedulingHub() {
   return (
     <main className="min-h-screen pb-20">
+      {/* HEADER */}
+      <nav className="px-6 py-6">
+        <div className="liquid-glass rounded-full max-w-3xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/profile-photo.png"
+              alt="Daniel Aguilar Bishop"
+              className="w-9 h-9 rounded-full object-cover"
+            />
+            <span className="text-white font-semibold text-sm">
+              Daniel Aguilar Bishop
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="text-white/60 hover:text-white text-xs transition-colors"
+            >
+              ← danieldev.me
+            </Link>
+            <form action={logout}>
+              <button
+                type="submit"
+                className="text-white/60 hover:text-white text-xs transition-colors"
+              >
+                Logout
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
       {/* HERO */}
-      <section className="px-6 pt-16 pb-12 border-b border-white/10">
+      <section className="px-6 pt-4 pb-12 border-b border-white/10">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 text-white/40 text-xs mb-6">
-            <Link href="/lab" className="hover:text-white/70 transition-colors">
-              Lab
-            </Link>
+            <span>Lab</span>
             <span>›</span>
             <span className="text-white/60">retail-scheduling</span>
           </div>
@@ -58,6 +132,21 @@ export default function RetailSchedulingHub() {
       {/* CONTENT + SIDEBAR */}
       <div className="max-w-5xl mx-auto px-6 pt-12 grid grid-cols-1 md:grid-cols-[1fr_240px] gap-12">
         <div className="flex flex-col gap-16">
+          <section id="about" className="scroll-mt-24">
+            <h2 className="text-white text-lg font-medium mb-4">
+              What is TWS
+            </h2>
+            <p className="text-white/70 text-sm leading-relaxed max-w-xl">
+              TimeWellScheduled is workforce management software for teams
+              that work in shifts — scheduling, time &amp; attendance, and
+              payroll integration in one place, built mostly for retail,
+              restaurants, hospitality, and long-term care. There&apos;s a
+              lot of ground we could cover together. This hub is one
+              possible starting point: creative advertising campaigns built
+              around what TWS actually looks like, not stock photography.
+            </p>
+          </section>
+
           <section id="video" className="scroll-mt-24">
             <h2 className="text-white text-lg font-medium mb-4">
               Concept video
@@ -107,26 +196,36 @@ export default function RetailSchedulingHub() {
               to you.
             </p>
           </section>
+
+          {/* Mobile-only: the desktop sidebar is hidden below md, so the
+              contact CTA moves here instead of disappearing entirely. */}
+          <div className="md:hidden">
+            <ContactCTA />
+          </div>
         </div>
 
         <aside className="hidden md:block">
-          <div className="liquid-glass rounded-2xl overflow-hidden sticky top-8">
-            <div className="px-5 py-4 border-b border-white/10">
-              <p className="text-white/40 text-xs uppercase tracking-widest">
-                In this hub
-              </p>
+          <div className="flex flex-col gap-4 sticky top-8">
+            <div className="liquid-glass rounded-2xl overflow-hidden">
+              <div className="px-5 py-4 border-b border-white/10">
+                <p className="text-white/40 text-xs uppercase tracking-widest">
+                  In this hub
+                </p>
+              </div>
+              <nav className="flex flex-col">
+                {TOC.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className="px-5 py-3 text-white/60 hover:text-white hover:bg-white/5 text-sm transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
             </div>
-            <nav className="flex flex-col">
-              {TOC.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="px-5 py-3 text-white/60 hover:text-white hover:bg-white/5 text-sm transition-colors"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
+
+            <ContactCTA />
           </div>
         </aside>
       </div>
