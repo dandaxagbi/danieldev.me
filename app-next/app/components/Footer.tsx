@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Linkedin, Mail, MessageCircle } from 'lucide-react'
 
 const CONTACT_EMAIL = 'danielaguilarbishop@gmail.com'
@@ -48,6 +49,12 @@ export default function Footer() {
             >
               Contact
             </a>
+            <Link
+              href="/lab"
+              className="text-white/60 hover:text-white text-sm transition-colors"
+            >
+              Lab
+            </Link>
           </div>
 
           <div className="flex items-center gap-3 order-3">

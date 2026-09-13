@@ -13,10 +13,12 @@ No se agregan librerías nuevas salvo necesidad clara y justificada. El stack ya
 ### III. `/lab` es una vitrina de trabajo, no un producto
 Cada proyecto dentro de `/lab` (ej. `retail-scheduling`) es una muestra puntual hecha para un cliente específico que Daniel quiere impresionar — no es un producto propio con roadmap ni backlog de features. La sección debe estar estructurada para que agregar un proyecto nuevo sea trivial (una carpeta/ruta más, misma plantilla de gate y layout), sin rediseñar nada existente cada vez.
 
-### IV. `/lab/*` nunca se indexa ni se promociona
-Todo lo que viva bajo `/lab/` lleva `noindex, nofollow` sin excepción, queda fuera de `sitemap.xml`, y el acceso es únicamente por link directo protegido por un login. No debe aparecer en buscadores, redes sociales, ni compartirse de forma pública. El gate es simple (usuario+contraseña únicos, personalizados por proyecto/cliente, + cookie de sesión vía middleware) — explícitamente no se construye un sistema de cuentas/roles real (sin base de datos, sin múltiples usuarios); sería sobre-ingeniería para el propósito real (discreción y un toque personal para el destinatario, no seguridad de nivel producto).
+### IV. `/lab/*` nunca se indexa, pero puede ser enlazado
+Todo lo que viva bajo `/lab/` lleva `noindex, nofollow` sin excepción y queda fuera de `sitemap.xml` — eso no cambia. Lo que sí cambió (ver amendment v1.2.0) es que un link a `/lab` puede vivir en la navegación pública del sitio (ej. el footer); la protección real recae enteramente en el login, no en la falta de descubribilidad. El gate es simple (usuario+contraseña únicos, personalizados por proyecto/cliente, + cookie de sesión vía middleware) — explícitamente no se construye un sistema de cuentas/roles real (sin base de datos, sin múltiples usuarios); sería sobre-ingeniería para el propósito real (discreción del contenido y un toque personal para el destinatario, no seguridad de nivel producto).
 
 *Amendment (v1.1.0, 2026-09-13): el gate pasó de un passcode único a usuario+contraseña, para poder personalizar el login por destinatario (ej. usuario "Mark" para el proyecto retail-scheduling de TWS) sin implicar un sistema de cuentas real — sigue siendo un único par fijo por variables de entorno, no una tabla de usuarios.*
+
+*Amendment (v1.2.0, 2026-09-13): se agregó un link "Lab" a la navegación del footer del sitio principal, visible para cualquier visitante — decisión explícita de Daniel, informada de que esto contradice la discreción total del diseño original (donde el único camino era un link compartido fuera de banda). El contenido de cada proyecto sigue protegido por login y `noindex`; lo que se relaja es únicamente la descubribilidad de la existencia de `/lab` como sección.*
 
 ### V. Identidad visual consistente
 Fondo oscuro, tipografía Instrument Serif para headings, estética "liquid-glass" en navegación/cards, tono de copy discreto y no corporativo (nunca lenguaje de venta agresivo). Toda pieza nueva — incluido `/lab` — hereda esta identidad; no se introduce un lenguaje visual distinto por sección.
@@ -33,4 +35,4 @@ Todo trabajo de migración o feature nueva se hace en una rama de feature (nunca
 
 Esta constitución tiene prioridad sobre preferencias de implementación puntuales. Cualquier decisión técnica que la contradiga (agregar una dependencia no justificada, indexar `/lab`, tocar un subsitio legacy sin necesidad, o saltarse la confirmación en un cambio de riesgo) debe señalarse explícitamente antes de ejecutarse, no asumirse como aceptable.
 
-**Version**: 1.1.0 | **Ratified**: 2026-09-12 | **Last Amended**: 2026-09-13
+**Version**: 1.2.0 | **Ratified**: 2026-09-12 | **Last Amended**: 2026-09-13

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ProjectCardProps = {
   title: string;
   status: string;
@@ -19,8 +21,8 @@ export default function ProjectCard({ title, status, href }: ProjectCardProps) {
   }
 
   return (
-    <a href={href} className="block hover:bg-white/5 transition-colors rounded-2xl">
+    <Link href={href} className="block hover:bg-white/5 transition-colors rounded-2xl">
       {content}
-    </a>
+    </Link>
   );
 }

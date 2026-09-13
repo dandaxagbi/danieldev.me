@@ -2,7 +2,11 @@ import Link from "next/link";
 import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
-  { title: "retail-scheduling", status: "In progress" },
+  {
+    title: "retail-scheduling",
+    status: "In progress",
+    href: "/lab/retail-scheduling",
+  },
 ];
 
 export default function LabPage() {
@@ -50,6 +54,7 @@ export default function LabPage() {
               key={project.title}
               title={project.title}
               status={project.status}
+              href={project.href}
             />
           ))}
         </div>
