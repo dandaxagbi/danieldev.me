@@ -36,7 +36,22 @@ const IMAGE_CONCEPTS = [
 function ContactCTA() {
   return (
     <div className="liquid-glass rounded-2xl px-5 py-5 flex flex-col gap-4">
-      <p className="text-white font-medium text-sm">Let&apos;s talk</p>
+      <div className="flex items-center gap-3">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/profile-photo.png"
+          alt="Daniel Aguilar Bishop"
+          className="w-11 h-11 rounded-full object-cover"
+        />
+        <div>
+          <p className="text-white font-medium text-sm">
+            Daniel Aguilar Bishop
+          </p>
+          <p className="text-white/50 text-xs mt-0.5">
+            Happy to talk this through, Mark.
+          </p>
+        </div>
+      </div>
 
       <a
         href={CV_FILE_URL}
