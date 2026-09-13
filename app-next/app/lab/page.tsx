@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
@@ -20,12 +21,12 @@ export default function LabPage() {
               Daniel Aguilar Bishop
             </span>
           </div>
-          <a
+          <Link
             href="/"
             className="text-white/60 hover:text-white text-xs transition-colors"
           >
             ← volver al sitio
-          </a>
+          </Link>
         </div>
       </nav>
 

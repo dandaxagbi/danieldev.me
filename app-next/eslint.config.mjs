@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Subsitios legacy: HTML/JS estático servido tal cual desde public/, no
+    // es código fuente de esta app — lintearlo solo genera ruido falso.
+    "public/**",
   ]),
 ]);
 
