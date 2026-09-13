@@ -105,6 +105,7 @@ export default function Hero() {
         autoPlay
         playsInline
         preload="auto"
+        // @ts-expect-error fetchPriority is valid HTML but React's video element types don't declare it (they do for img)
         fetchPriority="high"
         style={{ opacity: 0 }}
       />
