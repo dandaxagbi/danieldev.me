@@ -9,7 +9,7 @@ const PROJECTS = [
     tag: 'Development',
     title: 'AIM Internet Marketing',
     description:
-      'Independently designed and built a new multilingual (DE/EN/ES) marketing website from scratch, spanning 40+ service and case-study pages, with a secure client reporting portal, AI-powered chat widget, and automated QA testing. I also run the technical SEO/GEO audits and structured-data (JSON-LD/Schema.org) work for AIM\'s clients.',
+      'Designed and built a new multilingual (DE/EN/ES) marketing website from scratch, spanning 40+ service and case-study pages, with a secure client reporting portal, AI-powered chat widget, and automated QA testing. I also run the technical SEO/GEO audits and structured-data (JSON-LD/Schema.org) work for AIM\'s clients.',
     href: 'https://aimnewwebsite.vercel.app/',
     image: '/projects/aim-website.jpg',
     stats: ['Next.js · React · TypeScript', '40+ pages', 'DE / EN / ES'],
